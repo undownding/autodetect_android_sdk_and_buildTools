@@ -19,6 +19,27 @@ See [the origin document](https://github.com/aayvazyan-tgm/autodetect_android_sd
 
 哥们，我相信你的水平点[上面的链接](https://github.com/aayvazyan-tgm/autodetect_android_sdk_and_buildTools)你是能看懂的。
 
+算了，还是写上吧。
+
+```gradle
+apply from: 'https://raw.githubusercontent.com/undownding/autodetect_android_sdk_and_buildTools/master/sdktools.gradle'
+
+android {
+    //use the newest SDK automatically if the given one is not available
+    compileSdkVersion project.getSDKIfPossible(21)
+    //Use the lastest patch BuildTool Version available, that fits to the given minor version. default to the given value on error
+    buildToolsVersion project.getHighestAvailableTools("21.1.2")
+}
+```
+
+Not work in China.See offline usage.
+
+因为众所周知的原因上面这写法八成是不好使的，还是老老实实把脚本扒下来本地引用吧。
+
+```gradle
+apply from: 'sdktools.gradle'
+```
+
 Attention(注意)
 ------------
 cmd.exe not work on my computer so I use PowerShell, if you're using windows, please at lease confirm PowerShell.exe works.
