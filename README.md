@@ -1,5 +1,4 @@
-# Smart Autodetection
-# SDK 智能检测
+# Smart Autodetection - SDK 智能检测
 
 Available Functions(这玩意用来干啥)
 --------------------
